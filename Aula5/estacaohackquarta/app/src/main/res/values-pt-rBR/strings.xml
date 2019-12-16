@@ -1,0 +1,38 @@
+<resources>
+    <!-- Login -->
+    <string name="app_name">Estação Hack</string>
+    <string name="signIn">Entrar</string>
+    <string name="signUp">Cadastrar</string>
+    <string name="user">Usuario</string>
+    <string name="password">Senha</string>
+    <string name="emptyLogin">Preencha os campos Usuario e Senha!</string>
+    <string name="userEmpty">Preencha o campo Usuario !</string>
+    <string name="passwordEmpty">Preencha o campo Senha !</string>
+    <string name="userLogged">Usuario Logado !</string>
+    <string name="incorrectUser">Usuario e/ou senha incorreto!</string>
+
+    <!-- Main -->
+    <string name="welcome">Seja bem vind</string>
+    <string name="personName">Nome do fulano</string>
+    <string name="personEmail">E-mail do fulano</string>
+    <string name="personGender">Sexo do fulano</string>
+    <string name="exit">Sair</string>
+    <string name="siteCellep">Site Cellep</string>
+
+    <!-- Cadastro -->
+    <string name="name">Nome</string>
+    <string name="surname">Sobrenome</string>
+    <string name="email">E-mail</string>
+    <string name="success">Sucesso</string>
+    <string name="ok">Ok</string>
+    <array name="gender">
+        <item>Selecione o Sexo</item>
+        <item>Masculino</item>
+        <item>Feminino</item>
+    </array>
+    <string name="fillFields">Preencha todos os Campos!</string>
+    <string name="fillGender">Selecione um sexo!</string>
+    <string name="registerSuccess">Cadastro efetuado com Sucesso!</string>
+
+
+</resources>
