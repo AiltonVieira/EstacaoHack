@@ -18,31 +18,35 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //Navegador
         var web = findViewById<WebView>(R.id.wbvNavegador)
 
+        //Esconde o título da toolbar
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
+        //Configurações do webclient ( desabilita os controles de zoom )
         web.webViewClient = MyWebClient()
         web.webChromeClient = MyWebChromeClient()
         web.settings.builtInZoomControls = true
         web.settings.displayZoomControls = false
         web.settings.javaScriptEnabled = true
 
-
+        //Ao apertar enter realizar a busca
         edtUrl.setOnKeyListener { v, keyCode, event ->
             // If the event is a key-down event on the "enter" button
             if (event.action == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER) {
                 // Perform action on key press
-                web.loadUrl(edtUrl.text.trim().toString())
+                buscar()
                 true
             }
             false
         }
 
-
+        //Inicia a página carregando a url do google
         web.loadUrl("https://www.google.com.br")
         pgbLoad.max = 100
 
+        // Funções dos botões
         imvBack.setOnClickListener {
             if (web.canGoBack())
                 web.goBack()
@@ -55,29 +59,36 @@ class MainActivity : AppCompatActivity() {
                 web.goForward()
         }
         btnIr.setOnClickListener {
-            var url = edtUrl.text.trim().toString()
-            if (url.isEmpty()){
-
-                Toast.makeText(this@MainActivity, "A Url está vazia", Toast.LENGTH_LONG).show()
-
-            } else if (url.indexOf("www") != -1){
-
-                if (url.indexOf("http") != -1){
-
-                    web.loadUrl(url)
-
-                }
-                web.loadUrl("http://$url")
-
-            } else{
-
-                web.loadUrl("https://www.google.com/search?q=$url")
-
-            }
+            buscar()
         }
 
     }
 
+    fun buscar(){
+        //Realiza a requisição da url digitada
+        var web = findViewById<WebView>(R.id.wbvNavegador)
+        var url = edtUrl.text.trim().toString()
+        if (url.isEmpty()){
+
+            Toast.makeText(this@MainActivity, "A Url está vazia", Toast.LENGTH_LONG).show()
+
+        } else if (url.indexOf("www") != -1){
+
+            if (url.indexOf("http") == -1){
+
+                web.loadUrl(url)
+
+            }
+            web.loadUrl("http://$url")
+
+        } else{
+
+            web.loadUrl("https://www.google.com/search?q=$url")
+
+        }
+    }
+
+    // Webclient, configurações sobre estados do webview
     inner class MyWebClient : WebViewClient() {
         override fun shouldOverrideUrlLoading(view: WebView, url: String): Boolean {
             view.loadUrl(url)
