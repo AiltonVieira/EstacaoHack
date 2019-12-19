@@ -1,9 +1,11 @@
 # EstacaoHack
 \
 Um aplicativo desenvolvido no curso de Desenvolvimento com Koltin na Estação Hack.\
+Disponível em 2 linguagens: inglês e português (linguagem do dispositivo).
 \
-<i>A application developed in the Development course with Koltin at Hack Station.</i> \
-\
+<i>A application developed in the Development course with Koltin at Hack Station.\
+Available in 2 languages: English and Portuguese (device language).
+</i> \
 \
 <b>Contributions</b> \
 Ailton Vieira \
@@ -24,7 +26,8 @@ Demo.\
 <img src="https://raw.githubusercontent.com/AiltonVieira/EstacaoHack/master/Screenshots/third.png" height="320" width="180">
 \
 ____________
-
+Me encontre em:\
+<i>Found me at:</i> \
 <a href="https://www.linkedin.com/in/ailtonsv">https://www.linkedin.com/in/ailtonsv</a> \
 \
 Obrigado!\
